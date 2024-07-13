@@ -3,13 +3,14 @@ import { openai } from "../../../lib/openai.js"
 export async function validateImageRoutes(app) {
     app.post("/validate-image", async(req, res) => {
         const imageHash = req.body.imageHash;
+        const validationPrompt = req.body.validationPrompt;
         const response = await openai.chat.completions.create({
             model: "gpt-4o",
             messages: [
               {
                 role: "user",
                 content: [
-                  { type: "text", text: "Is this image valid for a person running? Respond as true or false. It has to be a real image, not a generated one or animated." },
+                  { type: "text", text: validationPrompt },
                   {
                     type: "image_url",
                     image_url: {
