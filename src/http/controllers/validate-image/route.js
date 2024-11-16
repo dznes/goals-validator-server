@@ -14,7 +14,7 @@ export async function validateImageRoutes(app) {
                   {
                     type: "image_url",
                     image_url: {
-                      "url": `https://gateway.lighthouse.storage/ipfs/${imageHash}`,
+                      "url": `https://gateway.pinata.cloud/ipfs/${imageHash}`,
                     //   "url": "https://media.self.com/photos/57d8b8874b76f0f832a0ecff/master/w_1600,c_limit/running-marathon-data.jpg",
                       "detail": "high"
                     },
